@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pButtons = new System.Windows.Forms.Panel();
             this.bNewTest = new System.Windows.Forms.Button();
             this.bEndTest = new System.Windows.Forms.Button();
             this.lTimeDisplay = new System.Windows.Forms.Label();
             this.pAnswers = new System.Windows.Forms.Panel();
+            this.tStopwatch = new System.Windows.Forms.Timer(this.components);
             this.pButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,26 +57,30 @@
             this.bNewTest.TabIndex = 0;
             this.bNewTest.Text = "New Test";
             this.bNewTest.UseVisualStyleBackColor = true;
+            this.bNewTest.Click += new System.EventHandler(this.bNewTest_Click);
             // 
             // bEndTest
             // 
+            this.bEndTest.Enabled = false;
             this.bEndTest.Location = new System.Drawing.Point(93, 12);
             this.bEndTest.Name = "bEndTest";
             this.bEndTest.Size = new System.Drawing.Size(75, 23);
             this.bEndTest.TabIndex = 1;
             this.bEndTest.Text = "End Test";
             this.bEndTest.UseVisualStyleBackColor = true;
+            this.bEndTest.Click += new System.EventHandler(this.bEndTest_Click);
             // 
             // lTimeDisplay
             // 
             this.lTimeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lTimeDisplay.AutoSize = true;
             this.lTimeDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTimeDisplay.Location = new System.Drawing.Point(193, 12);
+            this.lTimeDisplay.Location = new System.Drawing.Point(228, 12);
             this.lTimeDisplay.Name = "lTimeDisplay";
-            this.lTimeDisplay.Size = new System.Drawing.Size(105, 24);
+            this.lTimeDisplay.Size = new System.Drawing.Size(70, 24);
             this.lTimeDisplay.TabIndex = 2;
-            this.lTimeDisplay.Text = "0:00:00.000";
+            this.lTimeDisplay.Text = "0:00:00";
+            this.lTimeDisplay.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pAnswers
             // 
@@ -83,6 +89,11 @@
             this.pAnswers.Name = "pAnswers";
             this.pAnswers.Size = new System.Drawing.Size(310, 446);
             this.pAnswers.TabIndex = 1;
+            // 
+            // tStopwatch
+            // 
+            this.tStopwatch.Interval = 1000;
+            this.tStopwatch.Tick += new System.EventHandler(this.tStopwatch_Tick);
             // 
             // MCQAnsSheet
             // 
@@ -107,6 +118,7 @@
         private System.Windows.Forms.Button bEndTest;
         private System.Windows.Forms.Button bNewTest;
         private System.Windows.Forms.Panel pAnswers;
+        private System.Windows.Forms.Timer tStopwatch;
     }
 }
 
