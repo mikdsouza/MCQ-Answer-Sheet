@@ -31,11 +31,27 @@ namespace MCQ_Answer_Sheet
                 bNewTest.Enabled = false;
                 bEndTest.Enabled = true;
                 tStopwatch.Enabled = true;
+                pAnswers.Controls.Clear();
+
+                for (int i = 1; i <= testOptions.NumQuestions; i++)
+                {
+                    Question q = new Question(i, testOptions.NumAnswers, testOptions.AnswerStyle);
+                    pAnswers.Controls.Add(q);
+                    q.Dock = DockStyle.Top;
+                    q.BringToFront();
+                }
             }
         }
 
         private void bEndTest_Click(object sender, EventArgs e)
         {
+            foreach(Control c in pAnswers.Controls)
+            {
+                if (c is Question)
+                {
+                    ((Question)c).EndTest();
+                }
+            }
             bEndTest.Enabled = false;
             bNewTest.Enabled = true;
             tStopwatch.Enabled = false;

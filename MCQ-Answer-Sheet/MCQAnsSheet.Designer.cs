@@ -46,7 +46,7 @@
             this.pButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.pButtons.Location = new System.Drawing.Point(0, 0);
             this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(310, 46);
+            this.pButtons.Size = new System.Drawing.Size(304, 46);
             this.pButtons.TabIndex = 0;
             // 
             // bNewTest
@@ -75,7 +75,7 @@
             this.lTimeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lTimeDisplay.AutoSize = true;
             this.lTimeDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTimeDisplay.Location = new System.Drawing.Point(228, 12);
+            this.lTimeDisplay.Location = new System.Drawing.Point(222, 12);
             this.lTimeDisplay.Name = "lTimeDisplay";
             this.lTimeDisplay.Size = new System.Drawing.Size(70, 24);
             this.lTimeDisplay.TabIndex = 2;
@@ -84,10 +84,13 @@
             // 
             // pAnswers
             // 
+            this.pAnswers.AutoScroll = true;
+            this.pAnswers.AutoSize = true;
+            this.pAnswers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pAnswers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnswers.Location = new System.Drawing.Point(0, 46);
             this.pAnswers.Name = "pAnswers";
-            this.pAnswers.Size = new System.Drawing.Size(310, 446);
+            this.pAnswers.Size = new System.Drawing.Size(304, 465);
             this.pAnswers.TabIndex = 1;
             // 
             // tStopwatch
@@ -100,14 +103,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(310, 492);
+            this.ClientSize = new System.Drawing.Size(304, 511);
             this.Controls.Add(this.pAnswers);
             this.Controls.Add(this.pButtons);
+            this.MinimumSize = new System.Drawing.Size(320, 550);
             this.Name = "MCQAnsSheet";
             this.Text = "Answer Sheet";
             this.pButtons.ResumeLayout(false);
             this.pButtons.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
